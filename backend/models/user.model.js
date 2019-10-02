@@ -1,0 +1,16 @@
+const userSchema = new Schema({
+    username:{
+        tye: String,
+        required: true, 
+        unique: true,
+        trim: true,
+        minlength: 2
+    }
+},{
+        timestamps: true
+    }
+);
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
