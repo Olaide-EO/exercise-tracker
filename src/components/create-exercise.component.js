@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 export default class CreateExercises extends Component {
     constructor(props){
         super(props);
@@ -8,7 +9,7 @@ export default class CreateExercises extends Component {
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
-
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             username: '',
@@ -20,8 +21,9 @@ export default class CreateExercises extends Component {
     }
 componentDidMount(){
     this.setState({
-        users: ['test user'],
-        username: 'test user'
+        username: 'test user',
+        users: ['test user']
+        
     })
 }
 
@@ -43,9 +45,9 @@ componentDidMount(){
         })
     }
 
-     onChangeDate(e){
+     onChangeDate(date){
         this.setState({
-            date: date
+            date: date,
         })
     }
 
@@ -58,7 +60,8 @@ componentDidMount(){
             date: this.state.date
         }
         console.log(exercise);
-        window.location = '/';
+      
+        window.location = "/";
     }
 
 
